@@ -534,7 +534,6 @@ We welcome contributions to improve the Transnational AQMS! This project demonst
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 **Created for the Google ADK Hackathon 2025** | **#adkhackathon**
 
