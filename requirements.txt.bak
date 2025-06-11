@@ -1,0 +1,41 @@
+# Requirements for Transnational AQMS
+# Core dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.11.5
+geojson-pydantic==2.0.0
+
+# Google Cloud dependencies
+google-cloud-bigquery==3.15.0
+google-cloud-monitoring==2.16.0
+google-cloud-logging==3.8.0
+google-cloud-storage==2.10.0
+
+# Data processing
+numpy==1.24.3
+pandas==2.0.3
+
+# HTTP and networking
+httpx==0.25.0
+aiohttp==3.9.0
+
+# Async support
+asyncio-mqtt==0.13.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# Development tools
+black==23.9.1
+flake8==6.1.0
+mypy==1.6.1
+
+# Monitoring and observability
+opentelemetry-api>=1.22.0
+opentelemetry-sdk>=1.22.0
+opentelemetry-exporter-gcp-monitoring>=1.6.0
+
+# Security
+cryptography==41.0.7

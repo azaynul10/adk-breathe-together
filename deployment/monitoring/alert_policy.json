@@ -1,0 +1,63 @@
+{
+  "displayName": "Transnational AQMS Alert Policy",
+  "documentation": {
+    "content": "Alert policy for monitoring air quality system performance and triggering notifications when PM2.5 levels exceed thresholds or system components fail.",
+    "mimeType": "text/markdown"
+  },
+  "conditions": [
+    {
+      "displayName": "High PM2.5 Levels",
+      "conditionThreshold": {
+        "filter": "resource.type=\"cloud_run_revision\" AND metric.type=\"custom.googleapis.com/pm25_level\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 150,
+        "duration": "300s",
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "perSeriesAligner": "ALIGN_MEAN",
+            "crossSeriesReducer": "REDUCE_MAX"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Service Error Rate",
+      "conditionThreshold": {
+        "filter": "resource.type=\"cloud_run_revision\" AND metric.type=\"run.googleapis.com/request_count\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0.05,
+        "duration": "300s",
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "perSeriesAligner": "ALIGN_RATE",
+            "crossSeriesReducer": "REDUCE_MEAN"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Service Response Time",
+      "conditionThreshold": {
+        "filter": "resource.type=\"cloud_run_revision\" AND metric.type=\"run.googleapis.com/request_latencies\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 5000,
+        "duration": "300s",
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "perSeriesAligner": "ALIGN_PERCENTILE_95",
+            "crossSeriesReducer": "REDUCE_MAX"
+          }
+        ]
+      }
+    }
+  ],
+  "combiner": "OR",
+  "enabled": true,
+  "notificationChannels": [],
+  "alertStrategy": {
+    "autoClose": "1800s"
+  }
+}

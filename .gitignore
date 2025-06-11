@@ -1,0 +1,18 @@
+# Ignore common Python artifacts (covers __pycache__ everywhere, including communication/)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+
+# Ignore VSCode history folder
+.history/
+
+# Ignore project-specific files and directories
+docs/
+urls.txt
+\communication\__pycache__
+\backup\agents\__pycache__
+.gcloudignore

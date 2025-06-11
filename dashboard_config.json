@@ -1,0 +1,26 @@
+﻿{
+  "displayName": "AQMS Dashboard",
+  "mosaicLayout": {
+    "columns": 12,
+    "tiles": [
+      {
+        "width": 6,
+        "height": 4,
+        "widget": {
+          "title": "PM2.5 Level",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "resource.type = \"cloud_run_revision\" AND metric.type = \"custom.googleapis.com/pm25_level\"",
+                "aggregation": {
+                  "alignmentPeriod": "60s",
+                  "perSeriesAligner": "ALIGN_MEAN"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

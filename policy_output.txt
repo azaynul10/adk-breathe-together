@@ -1,0 +1,1 @@
+ERROR: (gcloud.alpha.monitoring.policies.create) INVALID_ARGUMENT: The supplied filter does not specify a valid combination of metric and monitored resource descriptors. The query will not return any time series.
