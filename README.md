@@ -11,7 +11,7 @@
 **🏆 World's First Transnational ADK Implementation**  
 *Protecting 58 Million People Across Bangladesh-India Border*
 
-[🎮 **Live Interactive Demo**](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app) | [📺 **YouTube Demo**](https://youtu.be/OOTk7YzGYGA) | [📖 **Blog Post**](https://your-blog-link.com) | [🏗️ **Architecture**](#architecture)
+[🎮 **Live Interactive Demo**](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app) | [📺 **YouTube Demo**](https://youtu.be/OOTk7YzGYGA) | [📖 **Blog Post**](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
 
 </div>
 
