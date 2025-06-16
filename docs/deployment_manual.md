@@ -60,13 +60,13 @@ After deployment completes, test the services:
 
 ```bash
 # Test Bangladesh service
-curl https://aqms-bangladesh-[hash]-uc.a.run.app/health
+curl https://aqms-bangladesh-r5hed7gtca-uc.a.run.app/health
 
 # Test India service
-curl https://aqms-india-[hash]-uc.a.run.app/health
+curl https://aqms-india-r5hed7gtca-uc.a.run.app/health
 
 # Test orchestrator
-curl https://aqms-orchestrator-[hash]-uc.a.run.app/health
+curl https://aqms-orchestrator-r5hed7gtca-uc.a.run.app/health
 ```
 
 ## Detailed Deployment Steps
