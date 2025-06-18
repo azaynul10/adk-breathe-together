@@ -11,7 +11,7 @@
 **🏆 World's First Transnational ADK Implementation**  
 *Protecting 58 Million People Across Bangladesh-India Border*
 
-[🎮 **Live Interactive Demo**](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app) | [📺 **YouTube Demo**](https://youtu.be/OOTk7YzGYGA) | [📖 **Blog Post**](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
+[🎮 **Live Interactive Demo**](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app) | [📺 **YouTube Demo**](https://youtu.be/1cdV5TL71bc) | [📖 **Blog Post**](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
 
 </div>
 
@@ -21,7 +21,7 @@
 
 <div align="center">
 
-[![Transnational AQMS Demo](https://github.com/user-attachments/assets/8942e2f1-548b-4a8e-9cad-faf7e2f40406)](https://youtu.be/OOTk7YzGYGA)
+[![Transnational AQMS Demo](https://github.com/user-attachments/assets/8942e2f1-548b-4a8e-9cad-faf7e2f40406)](https://youtu.be/1cdV5TL71bc)
 
 **▶️ Watch the full demo: Building the World's First Transnational ADK System**
 
@@ -421,7 +421,7 @@ python tests/test_performance.py
 
 ### 📺 Video Content
 
-- **🎬 [YouTube Demo](https://youtube.com/watch?v=your-demo-video)**: Complete system walkthrough and live demonstration
+- **🎬 [YouTube Demo](https://youtu.be/1cdV5TL71bc)**: Complete system walkthrough and live demonstration
 - **🎮 [Interactive Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)**: Hands-on testing of all ADK agents
 - **📱 [Social Media](https://twitter.com/your-handle)**: Follow development updates and insights
 
@@ -434,7 +434,7 @@ python tests/test_performance.py
 
 ---
 
-## 🏆 Hackathon Achievements
+
 
 ### 🎯 ADK Implementation Excellence
 
