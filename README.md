@@ -11,7 +11,7 @@
 **🏆 World's First Transnational ADK Implementation**  
 *Protecting 58 Million People Across Bangladesh-India Border*
 
-[🎮 **Live Interactive Demo**](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app) | [📺 **YouTube Demo**](https://youtu.be/1cdV5TL71bc) | [📖 **Blog Post**](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
+[🎮 **Live Interactive Demo**](https://aqms-demo-fixed-494282557234.us-central1.run.app/) | [📺 **YouTube Demo**](https://youtu.be/1cdV5TL71bc) | [📖 **Blog Post**](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
 
 </div>
 
@@ -222,7 +222,7 @@ class RegionalOrchestrator(LoopAgent):
 4. **🚨 Emergency Simulation**: Trigger high pollution scenario and watch automated coordination
 5. **📊 Real-time Metrics**: View live impact metrics and system performance
 
-[**🎮 Launch Interactive Demo →**](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)
+[**🎮 Launch Interactive Demo →**](https://aqms-demo-fixed-494282557234.us-central1.run.app/)
 
 ---
 
