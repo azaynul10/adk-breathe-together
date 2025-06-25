@@ -423,7 +423,7 @@ python tests/test_performance.py
 
 - **🎬 [YouTube Demo](https://youtu.be/1cdV5TL71bc)**: Complete system walkthrough and live demonstration
 - **🎮 [Interactive Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)**: Hands-on testing of all ADK agents
-- **📱 [Social Media](https://twitter.com/your-handle)**: Follow development updates and insights
+- **📱 [Social Media](https://X.com/azaynul123)**: Follow development updates and insights
 
 ### 📖 Written Content
 
