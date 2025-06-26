@@ -45,7 +45,8 @@ open https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app
 
 <div align="center">
 
-![Interactive Demo](https://github.com/user-attachments/assets/d81712a5-c0c5-4473-8dff-3459b59ef58b)
+![Interactive Demo](https://github.com/user-attachments/assets/d9556577-20ac-4ad9-a086-ece8b4ac2048)
+
 *Interactive demo showing real-time cross-border coordination*
 
 </div>
