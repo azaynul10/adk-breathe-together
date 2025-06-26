@@ -84,20 +84,21 @@ The world's first **Transnational Air Quality Management System** using Google's
 ![transnational_aqms_architecture](https://github.com/user-attachments/assets/0199ffed-ebdd-41a6-89fe-28b3218b192d)
 
 <div align="center">
-
-*Complete system architecture showing all three ADK agent types*
-
+## 🧠 ADK Implementation
+*Complete system architecture showing all three ADK agent types.
+Our system harnesses the power of Google ADK agents to create a distributed, intelligent network: 
 </div>
 
 #### 🔄 Sequential Agent - Bangladesh
-**Dhaka PM2.5 Collector**: Systematic data collection from 47 monitoring stations
+**Dhaka PM2.5 Collector**: Systematic data collection from 47 monitoring stations. Responsible for collecting real-time PM2.5 data from sensors in Bangladesh. It processes data sequentially, ensuring accuracy and consistency.
 - 15 Government stations (reference-grade equipment)
 - 32 Low-cost sensor networks
 - Quality assurance pipeline
 - Real-time data harmonization
 
 <details>
-<summary>🔍 View Sequential Agent Implementation</summary>
+<summary> 
+🔍 View Sequential Agent Implementation</summary>
 
 ```python
 class DhakaAgent(SequentialAgent):
@@ -136,7 +137,7 @@ class DhakaAgent(SequentialAgent):
 - Emission source tracking  
 - Traffic flow monitoring
 - Parallel sub-agent coordination
-
+Simultaneously analyzes meteorological data (temperature, wind, humidity) from India, running multiple data processing tasks in parallel to provide rapid insights.
 <details>
 <summary>🔍 View Parallel Agent Implementation</summary>
 
@@ -180,6 +181,7 @@ class KolkataAgent(ParallelAgent):
 - Policy decision engine
 - Multi-channel alert system
 - Diplomatic coordination protocols
+ The central intelligence, continuously monitoring conditions, coordinating between the Dhaka and Kolkata agents, and triggering alerts or policy recommendations in a continuous feedback loop. It ensures cross-border synchronization and decision-making.
 
 <details>
 <summary>🔍 View Loop Agent Implementation</summary>
@@ -223,6 +225,7 @@ class RegionalOrchestrator(LoopAgent):
 ```
 
 </details>
+The **Agent-to-Agent (A2A) Protocol** is critical for secure and efficient communication between these geographically distributed agents, enabling seamless data exchange and coordinated actions.
 
 ---
 
