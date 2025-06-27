@@ -84,7 +84,6 @@ The world's first **Transnational Air Quality Management System** using Google's
 ![transnational_aqms_architecture](https://github.com/user-attachments/assets/0199ffed-ebdd-41a6-89fe-28b3218b192d)
 
 <div align="center">
-## 🧠 ADK Implementation
 *Complete system architecture showing all three ADK agent types.
 Our system harnesses the power of Google ADK agents to create a distributed, intelligent network: 
 </div>
