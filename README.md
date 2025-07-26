@@ -22,7 +22,7 @@ This platform has achieved a 97% improvement in emergency response time, reducin
 * Interactive Visualization: A live, user-friendly interface with Google Maps integration, showcasing the system's capabilities and impact.
 * Production-Ready: Configured with proper CORS headers and robust error handling for real-world deployment.
 
-[Live Interactive Demo](https://aqms-demo-fixed-494282557234.us-central1.run.app/) | [YouTube Demo](https://youtu.be/1cdV5TL71bc) | [Blog Post](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
+[Live Interactive Demo](https://aqms-bangladesh-494282557234.us-central1.run.app/demo) | [YouTube Demo](https://youtu.be/syLzvMYkfBc) 
 
 </div>
 
@@ -32,7 +32,7 @@ This platform has achieved a 97% improvement in emergency response time, reducin
 
 <div align="center">
 
-[![Transnational AQMS Demo](https://github.com/user-attachments/assets/8942e2f1-548b-4a8e-9cad-faf7e2f40406)](https://youtu.be/1cdV5TL71bc)
+[![Transnational AQMS Demo](https://github.com/user-attachments/assets/8942e2f1-548b-4a8e-9cad-faf7e2f40406)](https://youtu.be/syLzvMYkfBc)
 
 **Watch the full demo: Cross-Border Air Quality Management in Action**
 
@@ -95,7 +95,7 @@ The Transnational Air Quality Management System uses Google Maps Platform and cl
 4. Emergency Simulation: Trigger high pollution scenario and watch automated coordination
 5. Real-time Metrics: View live impact metrics and system performance
 
-[Launch Interactive Demo →](https://aqms-demo-fixed-494282557234.us-central1.run.app/)
+[Launch Interactive Demo →](https://aqms-bangladesh-494282557234.us-central1.run.app/demo)
 
 ---
 
@@ -179,50 +179,17 @@ curl -X POST "https://aqms-orchestrator-r5hed7gtca-uc.a.run.app/orchestrate" \
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/transnational-aqms.git
+git clone https://github.com/azaynul10/adk-breathe-together
 cd transnational-aqms
 
-# Set your project ID
-export PROJECT_ID="your-project-id"
-
-# Enable required APIs
-gcloud services enable run.googleapis.com cloudbuild.googleapis.com bigquery.googleapis.com
-
-# Deploy all services
-gcloud run deploy aqms-bangladesh --source . --region us-central1 --allow-unauthenticated --set-env-vars COUNTRY_CODE=BD
-gcloud run deploy aqms-india --source . --region us-central1 --allow-unauthenticated --set-env-vars COUNTRY_CODE=IN  
-gcloud run deploy aqms-orchestrator --source . --region us-central1 --allow-unauthenticated --set-env-vars SERVICE_TYPE=orchestrator
-
-# Verify deployment
-gcloud run services list --region us-central1
-```
 
 </details>
 
-### Option 3: Local Development
 
-<details>
-<summary>Local setup</summary>
-
-```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
 
-# Set environment variables
-export COUNTRY_CODE="BD"  # or "IN"
-export SERVICE_TYPE="agent"  # or "orchestrator"
 
-# Run local server
-uvicorn main:app --host 0.0.0.0 --port 8080 --reload
 
-# Test locally
-curl http://localhost:8080/health
-curl -X POST http://localhost:8080/collect
-```
 
 </details>
 
@@ -233,17 +200,6 @@ curl -X POST http://localhost:8080/collect
 ### Automated Test Suite
 
 ```bash
-# Run all tests
-python -m pytest tests/ -v
-
-# Test individual components
-python -m pytest tests/test_agents.py::TestDhakaAgent -v
-python -m pytest tests/test_agents.py::TestKolkataAgent -v
-python -m pytest tests/test_agents.py::TestOrchestrator -v
-
-# Performance testing
-python tests/test_performance.py
-```
 
 ### Manual Testing Scenarios
 
@@ -291,15 +247,11 @@ python tests/test_performance.py
 
 ### Video Content
 
-- [YouTube Demo](https://youtu.be/1cdV5TL71bc): Complete system walkthrough and live demonstration
-- [Interactive Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app): Hands-on testing of all system features
+- [YouTube Demo](https://youtu.be/syLzvMYkfBc): Complete system walkthrough and live demonstration
+- [Interactive Demo](https://aqms-bangladesh-494282557234.us-central1.run.app/demo): Hands-on testing of all system features
 - [Social Media](https://X.com/azaynul123): Follow development updates and insights
 
-### Written Content
 
-- [Blog Post](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4): "Breaking Borders, Breathing Better: How Google Maps Platform Enabled Cross-Border Environmental Cooperation"
-
----
 
 ## Implementation Excellence
 
@@ -337,10 +289,7 @@ We welcome contributions to improve the Transnational AQMS. This project demonst
 5. Open a Pull Request
 
 ### Issues & Support
-
-- [Report Issues](https://github.com/your-username/transnational-aqms/issues): Bug reports and feature requests
-- [Discussions](https://github.com/your-username/transnational-aqms/discussions): Community discussions and Q&A
-- [Contact](mailto:your-email@example.com): Direct support for critical issues
+- [Contact](mailto:azaynul3@gmail.com): Direct support for critical issues
 
 ---
 
@@ -415,9 +364,9 @@ This project is open source and available under the MIT License.
 
 Protecting 58 Million People | 97% Faster Response | Powered by Google Maps Platform
 
-[Live Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)
-[Watch Video](https://youtu.be/OOTk7YzGYGA)
-[Read Blog](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4)
+[Live Demo](https://aqms-bangladesh-494282557234.us-central1.run.app/demo)
+[Watch Video](https://youtu.be/syLzvMYkfBc)
+
 
 Built for real-world impact. Deployed on Google Cloud Platform.
 
