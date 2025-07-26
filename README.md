@@ -78,9 +78,6 @@ Air pollution does not respect political boundaries. When Dhaka's air quality hi
 
 The Transnational Air Quality Management System uses Google Maps Platform and cloud-native architecture to enable real-time, cross-border air quality monitoring and response. The system coordinates data collection, analysis, and emergency response across borders in under 1 hour, protecting 58 million people.
 
-### System Architecture
-![transnational_aqms_architecture](https://github.com/user-attachments/assets/0199ffed-ebdd-41a6-89fe-28b3218b192d)
-
 <div align="center">
 *Complete system architecture showing all major components.*
 </div>
