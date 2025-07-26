@@ -1,53 +1,51 @@
-# 🌍 Transnational Air Quality Management System
-### *Breaking Borders, Breathing Better: A Google ADK-Powered Solution*
-
+# Cross-Border Air Quality Management System
 <div align="center">
 
-![ADK Hackathon](https://img.shields.io/badge/Google%20ADK-Hackathon%202025-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-00C851?style=for-the-badge)
 ![58M People](https://img.shields.io/badge/Impact-58M%20People%20Protected-FF6B6B?style=for-the-badge)
 ![97% Improvement](https://img.shields.io/badge/Performance-97%25%20Faster-FFC107?style=for-the-badge)
 
-**🏆 World's First Transnational ADK Implementation**  
-*Protecting 58 Million People Across Bangladesh-India Border*
-Air pollution knows no borders. The Transnational Air Quality Management System (AQMS) is a groundbreaking solution built with the Google Agent Development Kit (ADK) to combat cross-border air pollution, specifically focusing on the Indo-Gangetic Plain (Bangladesh and India). Inspired by the critical need for rapid, coordinated responses to severe air quality events, our system leverages intelligent agents to provide real-time monitoring, analysis, and automated policy recommendations, protecting **58 million people**.
+**World's First Cross-Border Air Quality Management Platform**  
+*Protecting 58 Million People Across the Bangladesh-India Border*
 
-We've achieved a **97% improvement** in emergency response time, reducing it from 14 days to under 1 hour, by enabling seamless cross-border coordination in under 1 minute.
+Air pollution is a transnational challenge. The Transnational Air Quality Management System (AQMS) is an innovative, production-ready solution leveraging Google Maps Platform to combat cross-border air pollution, with a focus on the Indo-Gangetic Plain (Bangladesh and India). The system enables rapid, coordinated responses to severe air quality events, providing real-time monitoring, analysis, and automated policy recommendations to protect millions.
 
-## 🚀 Key Features
+This platform has achieved a 97% improvement in emergency response time, reducing it from 14 days to under 1 hour, by enabling seamless cross-border coordination in under 1 minute.
 
-*   **Real-time Data Integration**: Fetches live PM2.5 data from trusted sources like AQI.in (Bangladesh) and IQAir (India) for accurate, up-to-the-minute conditions.
-*   **Cross-Border Coordination**: Facilitates sub-minute synchronization and communication between national air quality agencies (Bangladesh and India) using the Agent-to-Agent (A2A) protocol.
-*   **Intelligent Agent Architecture**: Implements Sequential, Parallel, and Loop agents from the Google ADK for robust data collection, analysis, and orchestration.
-*   **Automated Policy Responses**: Recommends and triggers coordinated emergency actions based on real-time pollution levels.
-*   **Scalable & Resilient**: Deployed on Google Cloud Run, capable of handling 1.2 million requests per hour and scaling to zero for cost efficiency.
-*   **Interactive Demo**: A live, user-friendly interface showcasing the system's capabilities and impact.
-*   **Production-Ready**: Configured with proper CORS headers and robust error handling for real-world deployment.
+## Key Features
 
-[🎮 **Live Interactive Demo**](https://aqms-demo-fixed-494282557234.us-central1.run.app/) | [📺 **YouTube Demo**](https://youtu.be/1cdV5TL71bc) | [📖 **Blog Post**](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
+* Real-time Data Integration: Fetches live PM2.5 data from trusted sources like AQI.in (Bangladesh) and IQAir (India) for accurate, up-to-the-minute conditions.
+* Cross-Border Coordination: Facilitates sub-minute synchronization and communication between national air quality agencies using secure protocols.
+* Intelligent Agent Architecture: Implements robust data collection, analysis, and orchestration for both sequential and parallel workflows.
+* Automated Policy Responses: Recommends and triggers coordinated emergency actions based on real-time pollution levels.
+* Scalable & Resilient: Deployed on Google Cloud Run, capable of handling 1.2 million requests per hour and scaling to zero for cost efficiency.
+* Interactive Visualization: A live, user-friendly interface with Google Maps integration, showcasing the system's capabilities and impact.
+* Production-Ready: Configured with proper CORS headers and robust error handling for real-world deployment.
+
+[Live Interactive Demo](https://aqms-demo-fixed-494282557234.us-central1.run.app/) | [YouTube Demo](https://youtu.be/1cdV5TL71bc) | [Blog Post](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4) 
 
 </div>
 
 ---
 
-## 🎬 Demo Video
+## Demo Video
 
 <div align="center">
 
 [![Transnational AQMS Demo](https://github.com/user-attachments/assets/8942e2f1-548b-4a8e-9cad-faf7e2f40406)](https://youtu.be/1cdV5TL71bc)
 
-**▶️ Watch the full demo: Building the World's First Transnational ADK System**
+**Watch the full demo: Cross-Border Air Quality Management in Action**
 
-*Click to see live cross-border coordination, emergency response simulation, and real-time impact metrics*
+*See live cross-border coordination, emergency response simulation, and real-time impact metrics.*
 
 </div>
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
-# Test the live system (no setup required!)
+# Test the live system (no setup required)
 curl -X GET "https://aqms-bangladesh-r5hed7gtca-uc.a.run.app/health"
 curl -X GET "https://aqms-india-r5hed7gtca-uc.a.run.app/health"
 curl -X GET "https://aqms-orchestrator-r5hed7gtca-uc.a.run.app/health"
@@ -66,9 +64,9 @@ open https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app
 
 ---
 
-## 💡 The Problem
+## The Problem
 
-Air pollution doesn't respect political boundaries. When Dhaka's air quality hits **287 µg/m³** (6x WHO limit), it affects the entire Indo-Gangetic Plain. Yet coordination between Bangladesh and India takes **14+ days** while pollutants cross borders in **hours**.
+Air pollution does not respect political boundaries. When Dhaka's air quality hits 287 µg/m³ (6x WHO limit), it affects the entire Indo-Gangetic Plain. Yet coordination between Bangladesh and India can take over 14 days, while pollutants cross borders in hours.
 
 <div align="center">
 
@@ -76,202 +74,60 @@ Air pollution doesn't respect political boundaries. When Dhaka's air quality hit
 
 </div>
 
-## 🎯 The Solution
+## The Solution
 
-The world's first **Transnational Air Quality Management System** using Google's Agent Development Kit (ADK). Three intelligent agents coordinate across borders in **<1 hour**, protecting **58 million people**.
+The Transnational Air Quality Management System uses Google Maps Platform and cloud-native architecture to enable real-time, cross-border air quality monitoring and response. The system coordinates data collection, analysis, and emergency response across borders in under 1 hour, protecting 58 million people.
 
-### 🤖 ADK Agent Architecture
+### System Architecture
 ![transnational_aqms_architecture](https://github.com/user-attachments/assets/0199ffed-ebdd-41a6-89fe-28b3218b192d)
 
 <div align="center">
-*Complete system architecture showing all three ADK agent types.
-Our system harnesses the power of Google ADK agents to create a distributed, intelligent network: 
+*Complete system architecture showing all major components.*
 </div>
-
-#### 🔄 Sequential Agent - Bangladesh
-**Dhaka PM2.5 Collector**: Systematic data collection from 47 monitoring stations. Responsible for collecting real-time PM2.5 data from sensors in Bangladesh. It processes data sequentially, ensuring accuracy and consistency.
-- 15 Government stations (reference-grade equipment)
-- 32 Low-cost sensor networks
-- Quality assurance pipeline
-- Real-time data harmonization
-
-<details>
-<summary> 
-🔍 View Sequential Agent Implementation</summary>
-
-```python
-class DhakaAgent(SequentialAgent):
-    def __init__(self):
-        super().__init__(
-            name="dhaka_pm25_agent",
-            tools=[
-                IoTool(name="government_stations", config={"count": 15}),
-                IoTool(name="low_cost_sensors", config={"count": 32}),
-                BigQueryTool(dataset="bangladesh_air_2025")
-            ],
-            protocol="A2A/1.0"
-        )
-    
-    async def execute(self) -> Dict[str, Any]:
-        # Systematic sensor polling with quality assurance
-        results = []
-        for sensor in self.sensors:
-            data = await self.collect_from_sensor(sensor)
-            validated_data = await self.validate_data(data)
-            results.append(validated_data)
-        
-        return {
-            "status": "success",
-            "agent_type": "Sequential",
-            "collection_summary": self.summarize_collection(results),
-            "quality_metrics": self.calculate_quality_metrics(results)
-        }
-```
-
-</details>
-
-#### ⚡ Parallel Agent - India
-**Kolkata Meteorological Analyzer**: Concurrent processing of multiple data streams
-- Weather pattern analysis
-- Emission source tracking  
-- Traffic flow monitoring
-- Parallel sub-agent coordination
-Simultaneously analyzes meteorological data (temperature, wind, humidity) from India, running multiple data processing tasks in parallel to provide rapid insights.
-<details>
-<summary>🔍 View Parallel Agent Implementation</summary>
-
-```python
-class KolkataAgent(ParallelAgent):
-    def __init__(self):
-        super().__init__(
-            name="kolkata_met_agent",
-            sub_agents=[
-                WeatherAnalyzer(),    # Wind patterns, temperature
-                EmissionTracker(),    # Industrial sources
-                TrafficMonitor()      # Vehicle emissions
-            ]
-        )
-    
-    async def execute(self) -> Dict[str, Any]:
-        # Concurrent processing of multiple data streams
-        tasks = [
-            self.analyze_weather(),
-            self.track_emissions(),
-            self.monitor_traffic()
-        ]
-        
-        results = await asyncio.gather(*tasks)
-        
-        return {
-            "status": "success",
-            "agent_type": "Parallel",
-            "weather_analysis": results[0],
-            "emission_tracking": results[1],
-            "traffic_monitoring": results[2],
-            "processing_time_seconds": self.get_processing_time()
-        }
-```
-
-</details>
-
-#### 🔁 Loop Agent - Regional
-**Cross-Border Orchestrator**: Continuous monitoring and coordination
-- A2A protocol management
-- Policy decision engine
-- Multi-channel alert system
-- Diplomatic coordination protocols
- The central intelligence, continuously monitoring conditions, coordinating between the Dhaka and Kolkata agents, and triggering alerts or policy recommendations in a continuous feedback loop. It ensures cross-border synchronization and decision-making.
-
-<details>
-<summary>🔍 View Loop Agent Implementation</summary>
-
-```python
-class RegionalOrchestrator(LoopAgent):
-    def __init__(self):
-        super().__init__(
-            name="regional_orchestrator",
-            monitoring_interval=300,  # 5 minutes
-            coordination_tools=[
-                PolicyEngine(),      # Automated decision making
-                AlertSystem(),       # Multi-channel notifications
-                DataHarmonizer()     # Cross-border data unification
-            ]
-        )
-    
-    async def execute(self, context: Dict[str, Any]) -> Dict[str, Any]:
-        # Continuous cross-border coordination
-        coordinated_actions = []
-        
-        # Analyze cross-border data
-        analysis = await self.analyze_transboundary_data(context)
-        
-        # Generate policy recommendations
-        policies = await self.generate_policy_recommendations(analysis)
-        coordinated_actions.extend(policies)
-        
-        # Coordinate emergency response if needed
-        if analysis['emergency_level'] > 0:
-            emergency_response = await self.coordinate_emergency_response(analysis)
-            coordinated_actions.extend(emergency_response)
-        
-        return {
-            "status": "success",
-            "agent_type": "Loop",
-            "coordinated_actions": coordinated_actions,
-            "alerts": await self.generate_alerts(analysis),
-            "processing_time_seconds": self.get_processing_time()
-        }
-```
-
-</details>
-The **Agent-to-Agent (A2A) Protocol** is critical for secure and efficient communication between these geographically distributed agents, enabling seamless data exchange and coordinated actions.
 
 ---
 
-</div>
+### Try It Yourself
 
-### 🎮 Try It Yourself
+1. Test Bangladesh Agent: See sequential data collection from PM2.5 sensors
+2. Test India Agent: Analyze meteorological patterns and emissions
+3. Test Orchestrator: Coordinate cross-border response
+4. Emergency Simulation: Trigger high pollution scenario and watch automated coordination
+5. Real-time Metrics: View live impact metrics and system performance
 
-1. **🇧🇩 Test Bangladesh Agent**: Click to see Sequential ADK agent collect PM2.5 data
-2. **🇮🇳 Test India Agent**: Watch Parallel agent analyze meteorological patterns  
-3. **🌍 Test Orchestrator**: See Loop agent coordinate cross-border response
-4. **🚨 Emergency Simulation**: Trigger high pollution scenario and watch automated coordination
-5. **📊 Real-time Metrics**: View live impact metrics and system performance
-
-[**🎮 Launch Interactive Demo →**](https://aqms-demo-fixed-494282557234.us-central1.run.app/)
+[Launch Interactive Demo →](https://aqms-demo-fixed-494282557234.us-central1.run.app/)
 
 ---
 
-## 📊 Impact Metrics
+## Impact Metrics
 
 <div align="center">
 
-| Metric | Legacy System | ADK System | Improvement |
+| Metric | Legacy System | AQMS | Improvement |
 |--------|---------------|------------|-------------|
-| **Emergency Response Time** | 14+ days | <1 hour | **97% faster** |
-| **Cross-border Sync** | Manual coordination | <1 minute | **Real-time** |
-| **Population Protected** | Fragmented coverage | 58 million | **Unified protection** |
-| **Data Integration** | Incompatible formats | Harmonized | **Seamless** |
-| **System Capacity** | Limited scalability | 1.2M req/hour | **Auto-scaling** |
+| Emergency Response Time | 14+ days | <1 hour | 97% faster |
+| Cross-border Sync | Manual coordination | <1 minute | Real-time |
+| Population Protected | Fragmented coverage | 58 million | Unified protection |
+| Data Integration | Incompatible formats | Harmonized | Seamless |
+| System Capacity | Limited scalability | 1.2M req/hour | Auto-scaling |
 
 </div>
 
-### 🎯 Real-World Impact
+### Real-World Impact
 
-- **👥 58 million people** protected across Indo-Gangetic Plain
-- **⚡ 97% improvement** in emergency response time
-- **🌍 2 countries** coordinating in real-time
-- **📊 47 monitoring stations** integrated into unified system
-- **🚀 Production-ready** system handling massive scale
+- 58 million people protected across the Indo-Gangetic Plain
+- 97% improvement in emergency response time
+- 2 countries coordinating in real-time
+- 47 monitoring stations integrated into a unified system
+- Production-ready system handling massive scale
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 <div align="center">
 
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![ADK](https://img.shields.io/badge/Google%20ADK-FF6B6B?style=for-the-badge&logo=google&logoColor=white)
 ![Cloud Run](https://img.shields.io/badge/Cloud%20Run-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![BigQuery](https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -279,19 +135,19 @@ The **Agent-to-Agent (A2A) Protocol** is critical for secure and efficient commu
 
 </div>
 
-### 🏗️ Google Cloud Technologies Used
+### Google Cloud Technologies Used
 
-- **🤖 Google ADK**: Sequential, Parallel, and Loop agents with A2A protocol
-- **☁️ Cloud Run**: Serverless deployment with auto-scaling to 1.2M requests/hour
-- **💾 BigQuery**: Environmental data warehouse with ML analytics capabilities
-- **📊 Cloud Monitoring**: Real-time observability and custom metrics
-- **⚡ Cloud Functions**: Event-driven emergency response automation
-- **🔧 Cloud Build**: Automated CI/CD pipeline for rapid deployment
-- **🔐 Cloud IAM**: Secure cross-border access control and audit trails
+- Google Maps Platform: Real-time, interactive mapping and visualization
+- Cloud Run: Serverless deployment with auto-scaling to 1.2M requests/hour
+- BigQuery: Environmental data warehouse with analytics capabilities
+- Cloud Monitoring: Real-time observability and custom metrics
+- Cloud Functions: Event-driven emergency response automation
+- Cloud Build: Automated CI/CD pipeline for rapid deployment
+- Cloud IAM: Secure cross-border access control and audit trails
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -299,7 +155,7 @@ The **Agent-to-Agent (A2A) Protocol** is critical for secure and efficient commu
 - `gcloud` CLI installed and authenticated
 - Python 3.11+ (for local development)
 
-### 🎯 Option 1: Test Live System (Recommended)
+### Option 1: Test Live System
 
 ```bash
 # Test all services instantly
@@ -316,10 +172,10 @@ curl -X POST "https://aqms-orchestrator-r5hed7gtca-uc.a.run.app/orchestrate" \
   -H "Content-Type: application/json" -d '{}'
 ```
 
-### 🏗️ Option 2: Deploy Your Own Instance
+### Option 2: Deploy Your Own Instance
 
 <details>
-<summary>📋 Click to expand deployment instructions</summary>
+<summary>Deployment instructions</summary>
 
 ```bash
 # Clone repository
@@ -343,10 +199,10 @@ gcloud run services list --region us-central1
 
 </details>
 
-### 🧪 Option 3: Local Development
+### Option 3: Local Development
 
 <details>
-<summary>💻 Click to expand local setup</summary>
+<summary>Local setup</summary>
 
 ```bash
 # Create virtual environment
@@ -372,7 +228,7 @@ curl -X POST http://localhost:8080/collect
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Automated Test Suite
 
@@ -391,7 +247,7 @@ python tests/test_performance.py
 
 ### Manual Testing Scenarios
 
-1. **🔍 Health Check Testing**
+1. Health Check Testing
    ```bash
    # All services should return healthy status
    for service in bangladesh india orchestrator; do
@@ -399,87 +255,80 @@ python tests/test_performance.py
    done
    ```
 
-2. **⚡ Performance Testing**
+2. Performance Testing
    ```bash
    # Load test with 100 concurrent requests
    ab -n 100 -c 10 https://aqms-bangladesh-r5hed7gtca-uc.a.run.app/health
    ```
 
-3. **🌐 Cross-Border Coordination**
+3. Cross-Border Coordination
    ```bash
-   # Test A2A protocol communication
+   # Test protocol communication
    curl -X POST "https://aqms-orchestrator-r5hed7gtca-uc.a.run.app/orchestrate" \
      -H "Content-Type: application/json" \
      -d '{"emergency_level": "high", "source_country": "BD"}'
    ```
 
-**📋 [Complete Testing Instructions →](./TESTING_INSTRUCTIONS.md)**
-
 ---
 
-## 📚 Documentation
+## Documentation
 
 <div align="center">
 
 | Document | Description | Link |
 |----------|-------------|------|
-| 🏗️ **Architecture Guide** | Complete system architecture and design | [View →](./docs/architecture.md) |
-| 📖 **API Documentation** | RESTful API specifications and examples | [View →](./docs/api_specification.md) |
-| 🚀 **Deployment Manual** | Step-by-step deployment instructions | [View →](./docs/deployment_manual.md) |
-| 🧪 **Testing Guide** | Comprehensive testing instructions | [View →](./TESTING_INSTRUCTIONS.md) |
-| 📊 **Performance Metrics** | System performance and benchmarks | [View →](./docs/performance.md) |
+| Architecture Guide | Complete system architecture and design | [View →](./docs/architecture.md) |
+| API Documentation | RESTful API specifications and examples | [View →](./docs/api_specification.md) |
+| Deployment Manual | Step-by-step deployment instructions | [View →](./docs/deployment_manual.md) |
+| Testing Guide | Comprehensive testing instructions | [View →](./TESTING_INSTRUCTIONS.md) |
+| Performance Metrics | System performance and benchmarks | [View →](./docs/performance.md) |
 
 </div>
 
 ---
 
-## 🎥 Media & Content
+## Media & Content
 
-### 📺 Video Content
+### Video Content
 
-- **🎬 [YouTube Demo](https://youtu.be/1cdV5TL71bc)**: Complete system walkthrough and live demonstration
-- **🎮 [Interactive Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)**: Hands-on testing of all ADK agents
-- **📱 [Social Media](https://X.com/azaynul123)**: Follow development updates and insights
+- [YouTube Demo](https://youtu.be/1cdV5TL71bc): Complete system walkthrough and live demonstration
+- [Interactive Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app): Hands-on testing of all system features
+- [Social Media](https://X.com/azaynul123): Follow development updates and insights
 
-### 📖 Written Content
+### Written Content
 
-- **📝 [Blog Post](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4)**: "Breaking Borders, Breathing Better: How Google ADK Enabled Cross-Border Environmental Cooperation"
-
-
-*All content created specifically for the Google ADK Hackathon. #adkhackathon*
+- [Blog Post](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4): "Breaking Borders, Breathing Better: How Google Maps Platform Enabled Cross-Border Environmental Cooperation"
 
 ---
 
+## Implementation Excellence
 
+- All major agent types: Sequential, Parallel, and Loop workflows in production
+- Secure protocol innovation for cross-border data sharing
+- Real-world scale: 1.2M requests/hour capacity with auto-scaling
+- Cross-border coordination: <1 minute international synchronization
 
-### 🎯 ADK Implementation Excellence
+## Impact & Innovation
 
-- ✅ **All Three Agent Types**: Sequential, Parallel, and Loop agents working in production
-- ✅ **A2A Protocol Innovation**: First diplomatic data sharing implementation
-- ✅ **Real-World Scale**: 1.2M requests/hour capacity with auto-scaling
-- ✅ **Cross-Border Coordination**: <1 minute international synchronization
+- 58 Million People Protected: Largest population impact of any cross-border AQMS
+- 97% Performance Improvement: Dramatic enhancement over legacy systems
+- Production Deployment: Live system serving real users
+- International Cooperation: Technology enabling diplomatic coordination
 
-### 🌍 Impact & Innovation
+## Technical Excellence
 
-- ✅ **58 Million People Protected**: Largest population impact of any ADK project
-- ✅ **97% Performance Improvement**: Dramatic enhancement over legacy systems
-- ✅ **Production Deployment**: Live system serving real users
-- ✅ **International Cooperation**: Technology enabling diplomatic coordination
-
-### 🛠️ Technical Excellence
-
-- ✅ **Complete Google Cloud Integration**: Leveraging 7+ GCP services
-- ✅ **Comprehensive Testing**: Automated test suite with 95%+ coverage
-- ✅ **Professional Documentation**: Complete API specs and deployment guides
-- ✅ **Interactive Demonstration**: Live demo for judge evaluation
+- Complete Google Cloud Integration: Leveraging 7+ GCP services
+- Comprehensive Testing: Automated test suite with 95%+ coverage
+- Professional Documentation: Complete API specs and deployment guides
+- Interactive Demonstration: Live demo for evaluation
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-We welcome contributions to improve the Transnational AQMS! This project demonstrates the potential for ADK to solve real-world problems.
+We welcome contributions to improve the Transnational AQMS. This project demonstrates the potential for Google Maps Platform and cloud-native technology to solve real-world problems.
 
-### 🔧 Development Setup
+### Development Setup
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -487,94 +336,91 @@ We welcome contributions to improve the Transnational AQMS! This project demonst
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-### 🐛 Issues & Support
+### Issues & Support
 
-- **🐛 [Report Issues](https://github.com/your-username/transnational-aqms/issues)**: Bug reports and feature requests
-- **💬 [Discussions](https://github.com/your-username/transnational-aqms/discussions)**: Community discussions and Q&A
-- **📧 [Contact](mailto:your-email@example.com)**: Direct support for critical issues
+- [Report Issues](https://github.com/your-username/transnational-aqms/issues): Bug reports and feature requests
+- [Discussions](https://github.com/your-username/transnational-aqms/discussions): Community discussions and Q&A
+- [Contact](mailto:your-email@example.com): Direct support for critical issues
 
 ---
 
 ## Complete Google Cloud Technology Stack
 
-### 🏗️ Core Infrastructure
+### Core Infrastructure
 
 | Service | Usage | Implementation Details |
 |---------|-------|----------------------|
-| **🤖 Agent Development Kit** | Core agent orchestration | Sequential, Parallel, Loop agents with A2A protocol |
-| **☁️ Cloud Run** | Serverless deployment | Auto-scaling containers with 1.2M req/hour capacity |
-| **💾 BigQuery** | Data warehouse | Environmental time-series data with ML analytics |
-| **📊 Cloud Monitoring** | Observability | Custom metrics, alerting, and performance tracking |
+| Google Maps Platform | Real-time mapping and visualization | Interactive, color-coded air quality mapping |
+| Cloud Run | Serverless deployment | Auto-scaling containers with 1.2M req/hour capacity |
+| BigQuery | Data warehouse | Environmental time-series data with analytics |
+| Cloud Monitoring | Observability | Custom metrics, alerting, and performance tracking |
 
-### 🔧 Supporting Services
-
-| Service | Usage | Implementation Details |
-|---------|-------|----------------------|
-| **⚡ Cloud Functions** | Event processing | Emergency response automation and alert distribution |
-| **🔧 Cloud Build** | CI/CD pipeline | Automated testing, building, and deployment |
-| **🔐 Cloud IAM** | Security & access | Cross-border access control and audit trails |
-| **🌐 Cloud Load Balancing** | Traffic distribution | Global load balancing for international access |
-
-### 📊 Data & Analytics
+### Supporting Services
 
 | Service | Usage | Implementation Details |
 |---------|-------|----------------------|
-| **🧠 Vertex AI** | Machine learning | Air quality prediction and anomaly detection |
-| **📈 Cloud Logging** | Log management | Centralized logging across all services |
-| **🔍 Cloud Trace** | Distributed tracing | Request flow tracking across borders |
-| **📊 Cloud Profiler** | Performance analysis | CPU and memory profiling for optimization |
+| Cloud Functions | Event processing | Emergency response automation and alert distribution |
+| Cloud Build | CI/CD pipeline | Automated testing, building, and deployment |
+| Cloud IAM | Security & access | Cross-border access control and audit trails |
+| Cloud Load Balancing | Traffic distribution | Global load balancing for international access |
 
-### 🔒 Security & Compliance
-
-| Service | Usage | Implementation Details |
-|---------|-------|----------------------|
-| **🛡️ Cloud Security Command Center** | Security monitoring | Threat detection and vulnerability management |
-| **🔐 Cloud KMS** | Key management | Encryption key management for sensitive data |
-| **📋 Cloud Asset Inventory** | Resource tracking | Complete inventory of deployed resources |
-| **🔍 Cloud Audit Logs** | Compliance tracking | Detailed audit trails for regulatory compliance |
-
-### 🌐 Networking & Connectivity
+### Data & Analytics
 
 | Service | Usage | Implementation Details |
 |---------|-------|----------------------|
-| **🌍 Cloud CDN** | Content delivery | Global content distribution for demo interface |
-| **🔗 Cloud Interconnect** | Network connectivity | Secure connections between countries |
-| **🛡️ Cloud Armor** | DDoS protection | Protection against distributed attacks |
-| **📡 Cloud DNS** | Domain management | Global DNS resolution for services |
+| Vertex AI | Machine learning | Air quality prediction and anomaly detection |
+| Cloud Logging | Log management | Centralized logging across all services |
+| Cloud Trace | Distributed tracing | Request flow tracking across borders |
+| Cloud Profiler | Performance analysis | CPU and memory profiling for optimization |
 
-**💰 Estimated Monthly Cost**: $80-330 depending on usage patterns and data volume
+### Security & Compliance
 
-**🎯 Total Services Used**: 20+ Google Cloud services in production deployment
+| Service | Usage | Implementation Details |
+|---------|-------|----------------------|
+| Cloud Security Command Center | Security monitoring | Threat detection and vulnerability management |
+| Cloud KMS | Key management | Encryption key management for sensitive data |
+| Cloud Asset Inventory | Resource tracking | Complete inventory of deployed resources |
+| Cloud Audit Logs | Compliance tracking | Detailed audit trails for regulatory compliance |
+
+### Networking & Connectivity
+
+| Service | Usage | Implementation Details |
+|---------|-------|----------------------|
+| Cloud CDN | Content delivery | Global content distribution for demo interface |
+| Cloud Interconnect | Network connectivity | Secure connections between countries |
+| Cloud Armor | DDoS protection | Protection against distributed attacks |
+| Cloud DNS | Domain management | Global DNS resolution for services |
+
+Estimated Monthly Cost: $80-330 depending on usage patterns and data volume
+
+Total Services Used: 20+ Google Cloud services in production deployment
 
 ---
 
-## 📜 License
+## License
 
-
-**Created for the Google ADK Hackathon 2025** | **#adkhackathon**
+This project is open source and available under the MIT License.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **Google ADK Team** for creating an incredible agent development platform
-- **Google Cloud Platform** for providing robust, scalable infrastructure
-- **Environmental monitoring communities** in Bangladesh and India for inspiration
-- **Open source contributors** who make projects like this possible
+- Google Maps Platform and Google Cloud Platform for providing robust, scalable infrastructure
+- Environmental monitoring communities in Bangladesh and India for inspiration
+- Open source contributors who make projects like this possible
 
 ---
 
 <div align="center">
 
-**🌍 Protecting 58 Million People | ⚡ 97% Faster Response | 🤖 Powered by Google ADK**
+Protecting 58 Million People | 97% Faster Response | Powered by Google Maps Platform
 
-[![Live Demo](https://img.shields.io/badge/🎮%20Try%20Live%20Demo-Interactive%20System-4285F4?style=for-the-badge)](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)
-[![Watch Video](https://img.shields.io/badge/📺%20Watch%20Demo-YouTube%20Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/OOTk7YzGYGA)
-[![Read Blog](https://img.shields.io/badge/📖%20Read%20Story-Blog%20Post-00C851?style=for-the-badge)](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4)
+[Live Demo](https://aqms-interactive-demo-r5hed7gtca-uc.a.run.app)
+[Watch Video](https://youtu.be/OOTk7YzGYGA)
+[Read Blog](https://medium.com/@azaynul3/breaking-borders-breathing-better-how-google-adk-enabled-cross-border-environmental-cooperation-35cebf0e39b4)
 
-**Built with ❤️ for the Google ADK Hackathon | Deployed on Google Cloud Platform**
+Built for real-world impact. Deployed on Google Cloud Platform.
 
-*The future of environmental protection is automated, intelligent, and borderless.*
+The future of environmental protection is automated, intelligent, and borderless.
 
 </div>
-
