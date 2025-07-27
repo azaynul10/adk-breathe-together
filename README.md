@@ -32,7 +32,7 @@ This platform has achieved a 97% improvement in emergency response time, reducin
 
 <div align="center">
 
-[![Transnational AQMS Demo](https://github.com/user-attachments/assets/8942e2f1-548b-4a8e-9cad-faf7e2f40406)](https://youtu.be/syLzvMYkfBc)
+[![Transnational AQMS Demo](https://github.com/user-attachments/assets/c456ead8-f956-4aec-81fd-e1d339fd96ee)](https://youtu.be/syLzvMYkfBc)
 
 **Watch the full demo: Cross-Border Air Quality Management in Action**
 
