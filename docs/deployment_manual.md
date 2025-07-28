@@ -13,18 +13,18 @@ Before deploying the Transnational Air Quality Management System, ensure you hav
 ### Google Cloud Platform Setup
 - Active GCP project with billing enabled
 - Project owner or editor permissions
-- Enabled APIs: Cloud Run, Cloud Build, BigQuery, Monitoring, Logging
+- Enabled APIs: Cloud Run, Cloud Build, Container Registry
 
 ### Authentication
-- Service account with appropriate permissions
-- Authentication key file downloaded locally
+- Google Cloud account with appropriate permissions
+- Local authentication configured
 
 ## Quick Start Deployment
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/azaynul10/transnational-aqms.git
+git clone https://github.com/azaynul10/adk-breathe-together
 cd transnational-aqms
 ```
 
@@ -48,11 +48,10 @@ chmod +x deploy.sh
 ```
 
 The deployment script will:
-- Enable required Google Cloud APIs
-- Build and push container images
-- Deploy services to Cloud Run
-- Create BigQuery datasets
-- Set up monitoring and alerting
+- Build and push container images to Google Container Registry
+- Deploy services to Cloud Run in different regions
+- Configure environment variables for each service
+- Set up basic monitoring and alerting
 
 ### 4. Verify Deployment
 
@@ -60,13 +59,13 @@ After deployment completes, test the services:
 
 ```bash
 # Test Bangladesh service
-curl https://aqms-bangladesh-r5hed7gtca-uc.a.run.app/health
+curl https://aqms-bangladesh-[PROJECT_ID]-[REGION].run.app/health
 
 # Test India service
-curl https://aqms-india-r5hed7gtca-uc.a.run.app/health
+curl https://aqms-india-[PROJECT_ID]-[REGION].run.app/health
 
 # Test orchestrator
-curl https://aqms-orchestrator-r5hed7gtca-uc.a.run.app/health
+curl https://aqms-orchestrator-[PROJECT_ID]-[REGION].run.app/health
 ```
 
 ## Detailed Deployment Steps
@@ -92,115 +91,19 @@ Enable required APIs:
 gcloud services enable \
     cloudbuild.googleapis.com \
     run.googleapis.com \
-    containerregistry.googleapis.com \
-    bigquery.googleapis.com \
-    monitoring.googleapis.com \
-    logging.googleapis.com \
-    storage.googleapis.com \
-    secretmanager.googleapis.com
+    containerregistry.googleapis.com
 ```
 
-### Step 2: Service Account Configuration
-
-Create service accounts for each component:
-
-```bash
-# Bangladesh agent service account
-gcloud iam service-accounts create aqms-bangladesh \
-    --display-name="AQMS Bangladesh Agent"
-
-# India agent service account
-gcloud iam service-accounts create aqms-india \
-    --display-name="AQMS India Agent"
-
-# Regional orchestrator service account
-gcloud iam service-accounts create aqms-orchestrator \
-    --display-name="AQMS Regional Orchestrator"
-```
-
-Assign IAM roles:
-
-```bash
-# Bangladesh agent permissions
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:aqms-bangladesh@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/bigquery.dataEditor"
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:aqms-bangladesh@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/monitoring.metricWriter"
-
-# India agent permissions
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:aqms-india@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/bigquery.dataEditor"
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:aqms-india@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/monitoring.metricWriter"
-
-# Orchestrator permissions
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:aqms-orchestrator@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/bigquery.admin"
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-    --member="serviceAccount:aqms-orchestrator@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/monitoring.admin"
-```
-
-### Step 3: Container Image Build
+### Step 2: Container Image Build
 
 Build the container image using Cloud Build:
 
 ```bash
-cd deployment
+# Build and push image
 gcloud builds submit --tag gcr.io/$PROJECT_ID/transnational-aqms .
 ```
 
-### Step 4: BigQuery Setup
-
-Create datasets for each country:
-
-```bash
-# Bangladesh dataset
-bq mk --dataset \
-    --location=asia-southeast1 \
-    --description="Air quality data for Bangladesh" \
-    $PROJECT_ID:bangladesh_air_2025
-
-# India dataset
-bq mk --dataset \
-    --location=asia-south1 \
-    --description="Air quality data for India" \
-    $PROJECT_ID:india_air_2025
-
-# Coordination dataset
-bq mk --dataset \
-    --location=asia-southeast1 \
-    --description="Cross-border coordination data" \
-    $PROJECT_ID:transnational_coordination
-```
-
-Create tables with appropriate schemas:
-
-```bash
-# Air quality measurements table
-bq mk --table \
-    $PROJECT_ID:bangladesh_air_2025.measurements \
-    schemas/air_quality_table.json
-
-bq mk --table \
-    $PROJECT_ID:india_air_2025.measurements \
-    schemas/air_quality_table.json
-
-# Policy actions table
-bq mk --table \
-    $PROJECT_ID:transnational_coordination.policy_actions \
-    schemas/policy_actions_table.json
-```
-
-### Step 5: Cloud Run Deployment
+### Step 3: Cloud Run Deployment
 
 Deploy the Bangladesh service:
 
@@ -210,12 +113,11 @@ gcloud run deploy aqms-bangladesh \
     --region asia-southeast1 \
     --platform managed \
     --allow-unauthenticated \
-    --service-account aqms-bangladesh@$PROJECT_ID.iam.gserviceaccount.com \
     --set-env-vars COUNTRY_CODE=BD,ENVIRONMENT=production \
     --memory 2Gi \
     --cpu 2 \
-    --max-instances 100 \
-    --min-instances 5 \
+    --max-instances 5 \
+    --min-instances 1 \
     --timeout 300
 ```
 
@@ -227,12 +129,11 @@ gcloud run deploy aqms-india \
     --region asia-south1 \
     --platform managed \
     --allow-unauthenticated \
-    --service-account aqms-india@$PROJECT_ID.iam.gserviceaccount.com \
     --set-env-vars COUNTRY_CODE=IN,ENVIRONMENT=production \
     --memory 2Gi \
     --cpu 2 \
-    --max-instances 100 \
-    --min-instances 5 \
+    --max-instances 5 \
+    --min-instances 1 \
     --timeout 300
 ```
 
@@ -244,29 +145,33 @@ gcloud run deploy aqms-orchestrator \
     --region asia-southeast1 \
     --platform managed \
     --allow-unauthenticated \
-    --service-account aqms-orchestrator@$PROJECT_ID.iam.gserviceaccount.com \
-    --set-env-vars SERVICE_TYPE=orchestrator,ENVIRONMENT=production \
-    --memory 4Gi \
-    --cpu 4 \
-    --max-instances 50 \
-    --min-instances 2 \
-    --timeout 600
+    --set-env-vars ENVIRONMENT=production \
+    --memory 2Gi \
+    --cpu 2 \
+    --max-instances 5 \
+    --min-instances 1 \
+    --timeout 300
 ```
 
-### Step 6: Monitoring Setup
+### Step 4: Google Maps API Configuration
+
+Set up Google Maps API for the interactive demo:
+
+```bash
+# Set Google Maps API key as environment variable
+gcloud run services update aqms-bangladesh \
+    --region asia-southeast1 \
+    --set-env-vars GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+```
+
+### Step 5: Monitoring Setup (Optional)
 
 Create monitoring alert policies:
 
 ```bash
+# Create alert policy for high PM2.5 levels
 gcloud alpha monitoring policies create \
-    --policy-from-file=monitoring/alert_policy.json
-```
-
-Set up custom dashboards:
-
-```bash
-gcloud monitoring dashboards create \
-    --config-from-file=monitoring/dashboard.json
+    --policy-from-file=deployment/monitoring/alert_policy.json
 ```
 
 ## Configuration Management
@@ -278,39 +183,49 @@ Each service uses environment variables for configuration:
 **Bangladesh Service:**
 - `COUNTRY_CODE=BD`
 - `ENVIRONMENT=production`
-- `BIGQUERY_DATASET=bangladesh_air_2025`
+- `GOOGLE_MAPS_API_KEY=your_api_key`
 
 **India Service:**
 - `COUNTRY_CODE=IN`
 - `ENVIRONMENT=production`
-- `BIGQUERY_DATASET=india_air_2025`
 
 **Regional Orchestrator:**
-- `SERVICE_TYPE=orchestrator`
 - `ENVIRONMENT=production`
-- `COORDINATION_DATASET=transnational_coordination`
 
-### Secret Management
+### Container Configuration
 
-Store sensitive configuration in Secret Manager:
+The system uses a multi-stage Docker build:
 
-```bash
-# API keys
-gcloud secrets create api-keys --data-file=secrets/api-keys.json
+```dockerfile
+# Builder stage
+FROM python:3.11-slim AS builder
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential gcc
+COPY requirements.txt ./
+RUN pip install --upgrade pip && pip install --user -r requirements.txt
 
-# Authentication tokens
-gcloud secrets create auth-tokens --data-file=secrets/auth-tokens.json
-
-# Database credentials
-gcloud secrets create db-credentials --data-file=secrets/db-credentials.json
+# Runtime stage
+FROM python:3.11-slim
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+ENV PATH=/root/.local/bin:$PATH
+COPY . .
+EXPOSE 8080
+ENV PORT=8080
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
 ```
 
-Grant access to secrets:
+### Dependencies
 
-```bash
-gcloud secrets add-iam-policy-binding api-keys \
-    --member="serviceAccount:aqms-bangladesh@$PROJECT_ID.iam.gserviceaccount.com" \
-    --role="roles/secretmanager.secretAccessor"
+The system requires the following Python packages:
+
+```
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+httpx==0.27.2
+requests>=2.25.0
+python-dotenv
 ```
 
 ## Scaling Configuration
@@ -319,10 +234,11 @@ gcloud secrets add-iam-policy-binding api-keys \
 
 Cloud Run services are configured with automatic scaling:
 
-- **Min instances:** 2-5 (depending on service)
-- **Max instances:** 50-100 (depending on service)
-- **CPU utilization target:** 70%
-- **Memory utilization target:** 80%
+- **Min instances:** 1-2 (depending on service)
+- **Max instances:** 5-10 (depending on service)
+- **CPU:** 1-2 cores per service
+- **Memory:** 1-2 Gi per service
+- **Timeout:** 300-600 seconds
 
 ### Manual Scaling
 
@@ -331,43 +247,39 @@ Adjust scaling parameters as needed:
 ```bash
 gcloud run services update aqms-bangladesh \
     --region asia-southeast1 \
-    --min-instances 10 \
-    --max-instances 200
+    --min-instances 2 \
+    --max-instances 10
 ```
 
-## Backup and Recovery
+## Service URLs and Endpoints
 
-### Database Backup
+### Service URLs
 
-BigQuery datasets are automatically backed up. Configure additional backup policies:
+After deployment, services will be available at:
 
-```bash
-# Create backup policy
-bq mk --transfer_config \
-    --project_id=$PROJECT_ID \
-    --data_source=scheduled_query \
-    --display_name="Daily Backup" \
-    --target_dataset=backup_dataset \
-    --schedule="every day 02:00"
-```
+- **Bangladesh Service:** `https://aqms-bangladesh-[PROJECT_ID]-[REGION].run.app`
+- **India Service:** `https://aqms-india-[PROJECT_ID]-[REGION].run.app`
+- **Orchestrator Service:** `https://aqms-orchestrator-[PROJECT_ID]-[REGION].run.app`
 
-### Configuration Backup
+### API Endpoints
 
-Backup deployment configurations:
+Each service provides the following endpoints:
 
 ```bash
-# Export Cloud Run configurations
-gcloud run services describe aqms-bangladesh \
-    --region asia-southeast1 \
-    --format export > backup/bangladesh-service.yaml
+# Health check
+GET /health
 
-gcloud run services describe aqms-india \
-    --region asia-south1 \
-    --format export > backup/india-service.yaml
+# Air quality data
+GET /api/air-quality/dhaka
+GET /api/air-quality/kolkata
+GET /api/air-quality/comparison
 
-gcloud run services describe aqms-orchestrator \
-    --region asia-southeast1 \
-    --format export > backup/orchestrator-service.yaml
+# Agent operations
+POST /collect
+POST /orchestrate
+
+# Interactive demo
+GET /demo
 ```
 
 ## Troubleshooting
@@ -379,15 +291,15 @@ gcloud run services describe aqms-orchestrator \
 2. Verify service status: `gcloud run services describe SERVICE_NAME`
 3. Check resource limits and scaling settings
 
-**Authentication errors:**
-1. Verify service account permissions
-2. Check secret manager access
-3. Validate API key configuration
+**Google Maps not loading:**
+1. Verify Google Maps API key is set correctly
+2. Check API key restrictions and billing
+3. Ensure the key has Maps JavaScript API enabled
 
-**Data synchronization issues:**
-1. Check cross-border communication logs
-2. Verify network connectivity
-3. Validate data schema compatibility
+**CORS errors:**
+1. Check CORS configuration in main.py
+2. Verify allowed origins are correct
+3. Test with different browsers/devices
 
 ### Log Analysis
 
@@ -441,9 +353,9 @@ Automated health checks are configured for all services. Manual health checks:
 
 ```bash
 # Check service health
-curl -f https://aqms-bangladesh-[hash]-uc.a.run.app/health || echo "Service unhealthy"
-curl -f https://aqms-india-[hash]-uc.a.run.app/health || echo "Service unhealthy"
-curl -f https://aqms-orchestrator-[hash]-uc.a.run.app/health || echo "Service unhealthy"
+curl -f https://aqms-bangladesh-[PROJECT_ID]-[REGION].run.app/health || echo "Service unhealthy"
+curl -f https://aqms-india-[PROJECT_ID]-[REGION].run.app/health || echo "Service unhealthy"
+curl -f https://aqms-orchestrator-[PROJECT_ID]-[REGION].run.app/health || echo "Service unhealthy"
 ```
 
 ### Security Updates
@@ -451,9 +363,9 @@ curl -f https://aqms-orchestrator-[hash]-uc.a.run.app/health || echo "Service un
 Regular security maintenance:
 
 1. Update base container images monthly
-2. Rotate service account keys quarterly
-3. Review and update IAM permissions annually
-4. Update API keys and tokens as needed
+2. Review and update environment variables as needed
+3. Rotate API keys and tokens as needed
+4. Monitor for security vulnerabilities
 
 ## Cost Optimization
 
@@ -477,15 +389,107 @@ Adjust scaling parameters based on usage patterns:
 - Increase max instances during high-pollution episodes
 - Optimize CPU and memory allocations based on monitoring data
 
+## Development and Testing
+
+### Local Development
+
+Run the application locally:
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run locally
+uvicorn main:app --host 0.0.0.0 --port 8080
+
+# Set environment variables
+export GOOGLE_MAPS_API_KEY=your_api_key
+export ENVIRONMENT=development
+```
+
+### Testing Endpoints
+
+Test the API endpoints locally:
+
+```bash
+# Health check
+curl http://localhost:8080/health
+
+# Air quality data
+curl http://localhost:8080/api/air-quality/dhaka
+curl http://localhost:8080/api/air-quality/kolkata
+
+# Interactive demo
+open http://localhost:8080/demo
+```
+
+### Cloud Build Testing
+
+Test the Cloud Build configuration:
+
+```bash
+# Submit build for testing
+gcloud builds submit --tag gcr.io/$PROJECT_ID/transnational-aqms:test .
+
+# Deploy test service
+gcloud run deploy aqms-test \
+    --image gcr.io/$PROJECT_ID/transnational-aqms:test \
+    --region us-central1 \
+    --platform managed \
+    --allow-unauthenticated
+```
+
 ## Support and Maintenance
 
 ### Contact Information
 
 - **Technical Support:** azaynul3@gmail.com
+- **GitHub Repository:** https://github.com/azaynul10/adk-breathe-together
 
 ### Maintenance Schedule
 
-- **Regular maintenance:** not yet updated
+- **Regular maintenance:** Monthly security updates
 - **Emergency maintenance:** As needed with 24-hour notice
 - **Security updates:** Applied immediately upon availability from Google Cloud
 
+### Documentation
+
+- **Architecture Documentation:** `architecture.md`
+- **API Documentation:** Available at `/docs` endpoint when running locally
+- **Interactive Demo:** Available at `/demo` endpoint
+
+## Deployment Checklist
+
+Before deploying to production, ensure:
+
+- [ ] Google Cloud project is set up with billing enabled
+- [ ] Required APIs are enabled (Cloud Run, Cloud Build, Container Registry)
+- [ ] Google Maps API key is configured and has proper restrictions
+- [ ] Environment variables are set correctly
+- [ ] Container image builds successfully
+- [ ] Services deploy without errors
+- [ ] Health checks pass for all services
+- [ ] Interactive demo loads correctly with Google Maps
+- [ ] CORS is configured properly for cross-origin requests
+- [ ] Monitoring and alerting are set up (optional)
+
+## Rollback Procedures
+
+If deployment fails or issues arise:
+
+```bash
+# List service revisions
+gcloud run revisions list --service=aqms-bangladesh --region=asia-southeast1
+
+# Rollback to previous revision
+gcloud run services update-traffic aqms-bangladesh \
+    --region=asia-southeast1 \
+    --to-revisions=REVISION_NAME=100
+
+# Or rollback to specific image
+gcloud run services update aqms-bangladesh \
+    --region=asia-southeast1 \
+    --image=gcr.io/$PROJECT_ID/transnational-aqms:PREVIOUS_TAG
+```
+
+This deployment manual provides accurate, step-by-step instructions for deploying the Transnational Air Quality Management System based on the actual implementation.
